@@ -56,7 +56,7 @@ console.log(getLast([1,2,3,4]))
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-let arrayNumbers = [-3, -2, -1, 1, 2, 3, 4, 5]
+let arrayNumbers = [1, 2, 3, 4, 5]
 function find(value, array) {
     for (let i = 0; i < array.length - 1; i++)
     if (value === array[i]){
@@ -100,15 +100,39 @@ console.log(sumAll(arrayNumbers))
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+let positiveArray = []
+let numbersArray = [-3, -2, -1, 0]
 function allPositive(array) {
-  
+  for (let numbers of array) {
+    if (numbers > 0) {
+      positiveArray.push(numbers);
+    }
+  }
+  return positiveArray;
 }
 
+ console.log(allPositive(numbersArray));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+// I picked the matchstick house challenge. I'm supposed
+// to code an expression that determines how many matches
+// there are based on the amount of matchstick houses.
+// 1 house has 6 matchsticks total but 2 houses would only
+// have 11 matchsticks as the houses share a wall. 
 
+function matchHouses(step) {
+	if(step > 0){
+		let matches = (step - 1) * 5 + 6;
+		return matches;
+	}
+	else{
+		return 0;
+	}
+}
+
+console.log(matchHouses(5));
 
 // DO NOT MODIFY
 // Used for automated testing
